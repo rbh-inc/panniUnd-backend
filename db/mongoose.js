@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 mongoose
   .connect(
-    `mongodb+srv://rabeeh:${process.env.MONGODB_PASSWORD}@production.zrtub.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+    `mongodb+srv://rabeeh:${process.env.MONGO_PASSWORD}@production.zrtub.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
