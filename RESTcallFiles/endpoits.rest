@@ -1,0 +1,17 @@
+###
+POST http://localhost:3000/registerWorker
+content-type: application/json
+
+{
+    "name": "rabeeh",
+    "description": "i am skilled in writing bad code, i have mastered the art BUGGYCODE",
+    "dpUrl": "https://avatars.githubusercontent.com/u/43750842?s=400&u=489686393b443da8b036aec2a46c8fc8f8c2a219&v=4",
+    "adharNo": 983828593823,
+    "phoneNo": 9876543210,
+    "sector": "IT",
+    "subSector": "software dev",
+    "sex": "male",
+    "hourlyCharge": 420,
+    "place": "kasaragod",
+    "state": "Kerala"
+}

@@ -15,7 +15,7 @@ const workerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  adhar: {
+  adharNo: {
     type: Number,
     required: true,
   },
@@ -33,10 +33,13 @@ const workerSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  sex: {
+  workSkill: {
     type: String,
     trim: true,
-    required: true,
+  },
+  sex: {
+    type: String,
+    enum: ['male', 'female', 'other'],
   },
   hourlyCharge: {
     type: Number,
