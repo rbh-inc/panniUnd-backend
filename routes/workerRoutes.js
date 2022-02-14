@@ -5,6 +5,9 @@ const router = new express.Router();
 router.get('/', (req, res) => {
   res.send('Hello World!');
 });
+router.post('/', (req, res) => {
+  res.send({ message: 'posted' });
+});
 
 router.post('/registerWorker', async (req, res) => {
   //? mongoose schema object created with values passed from the req object
@@ -20,7 +23,7 @@ router.post('/registerWorker', async (req, res) => {
       .status(201)
       .send({ workerId: savedWorker._id, name: savedWorker.name });
   } catch (e) {
-    return res.status(400).send({ error: e });
+    return res.status(400).send({ error: e, statusCode: 400 });
   }
 });
 
