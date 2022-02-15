@@ -27,4 +27,12 @@ router.post('/registerWorker', async (req, res) => {
   }
 });
 
+router.get('/workers', async (req, res) => {
+  try {
+    const data = await Worker.find({});
+    return res.status(200).send(data);
+  } catch (e) {}
+  return res.status(401).send(e);
+});
+
 module.exports = router;
