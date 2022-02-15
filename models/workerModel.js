@@ -41,7 +41,7 @@ const workerSchema = new mongoose.Schema({
     type: String,
     enum: ['male', 'female', 'other'],
   },
-  hourlyCharge: {
+  hourlyRate: {
     type: Number,
   },
   place: {
