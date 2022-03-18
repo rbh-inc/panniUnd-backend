@@ -50,13 +50,9 @@ router.get('/query', async (req, res) => {
     queryFilters.sex = sex;
   }
 
-  console.log(queryFilters);
-
   let queryResults = await Worker.find(queryFilters);
 
-  console.log(queryResults);
-
-  return res.status(200).send('result');
+  return res.status(200).send(queryResults);
 });
 
 router.get('/workers', async (req, res) => {
