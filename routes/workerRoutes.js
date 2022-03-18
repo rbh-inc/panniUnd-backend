@@ -30,8 +30,6 @@ router.post('/registerWorker', async (req, res) => {
 //? query
 router.get('/query', async (req, res) => {
   // get all the parameters from url
-  console.log(req.query);
-
   let queryFilters = {};
   let { location, rate, sector, subSector, sex } = req.query;
   if (location) {
@@ -52,6 +50,9 @@ router.get('/query', async (req, res) => {
 
   let queryResults = await Worker.find(queryFilters);
 
+  if (!queryResults) {
+    return res.status(400).send('query results not found');
+  }
   return res.status(200).send(queryResults);
 });
 

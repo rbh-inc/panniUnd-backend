@@ -17,4 +17,4 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:3000/query?location=kasaragod&rate=250&sector=&subSector=&sex=
+GET http://localhost:3000/query?asdfaf
