@@ -27,6 +27,38 @@ router.post('/registerWorker', async (req, res) => {
   }
 });
 
+//? query
+router.get('/query', async (req, res) => {
+  // get all the parameters from url
+  console.log(req.query);
+
+  let queryFilters = {};
+  let { location, rate, sector, subSector, sex } = req.query;
+  if (location) {
+    queryFilters.place = { $regex: location, $options: 'i' };
+  }
+  if (rate) {
+    queryFilters.hourlyRate = { $lte: rate };
+  }
+  if (sector) {
+    queryFilters.sector = sector;
+  }
+  if (subSector) {
+    queryFilters.subSector = subSector;
+  }
+  if (sex) {
+    queryFilters.sex = sex;
+  }
+
+  console.log(queryFilters);
+
+  let queryResults = await Worker.find(queryFilters);
+
+  console.log(queryResults);
+
+  return res.status(200).send('result');
+});
+
 router.get('/workers', async (req, res) => {
   try {
     const data = await Worker.find({});

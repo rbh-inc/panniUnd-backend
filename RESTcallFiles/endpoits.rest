@@ -15,3 +15,6 @@ content-type: application/json
     "place": "kasaragod",
     "state": "Kerala"
 }
+
+###
+GET http://localhost:3000/query?location=kasaragod&rate=250&sector=&subSector=&sex=
